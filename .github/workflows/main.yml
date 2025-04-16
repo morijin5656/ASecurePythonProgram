@@ -1,0 +1,13 @@
+name: scanning
+
+on: [push]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python-version: ["3.8", "3.9", "3.10"]
+    steps:
+    - name: sast-scan
+      uses: AppThreat/sast-scan-action@1.0.2
